@@ -1,5 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import GetFruit from '@/views/GetFruit.vue'
+import InsertFruit from '@/views/InsertFruit.vue'
+import DeleteFruit from '@/views/DeleteFruit.vue'
+import UpdateFruit from '@/views/UpdateFruit.vue'
+import GetData from '@/views/GetData.vue'
+import InsertUser from '@/views/InsertUser.vue'
+import SelectUser from '@/views/SelectUser.vue'
+import UpdateUser from '@/views/UpdateUser.vue'
+import RegisterView from '@/views/RegisterView.vue'
+import LoginView from '@/views/LoginView.vue'
 
 const routes = [
   {
@@ -8,14 +18,73 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/getFruits',
+    name: 'getFruits',
+    component: GetFruit
+
+  },
+  // {
+  //   path: '/insertFruits',
+  //   name: 'insertFruit',
+  //   component:InsertFruit
+    
+  // },
+  // {
+  //   path: '/deleteFruit',
+  //   name: 'deleteFruit',
+  //   component:DeleteFruit
+  
+  // },
+  // {
+  //   path: '/updateFruit',
+  //   name: 'updateFruit',
+  //   component:UpdateFruit
+   
+  // },{
+  //   path: '/getData',
+  //   name: 'getData',
+  //   component:GetData
+ 
+  // },
+  // {
+  //   path: '/insertUser',
+  //   name: 'insertUser',
+  //   component:InsertUser
+  
+  // },
+  // {
+  //   path: '/selectUser',
+  //   name: 'selectUser',
+  //   component:SelectUser
+   
+  // },{
+  //   path: '/deleteUser',
+  //   name: 'deleteUser'
+  
+ 
+  // },
+  // {
+  //   path: '/updateUser',
+  //   name: 'updateUser',
+  //   component:UpdateUser
+   
+  // },
+  {
+    path: '/register',
+    name: 'registerUser',
+    component:RegisterView
+   
+  },
+  {
+    path: '/login',
+    name: 'loginUser',
+    component:LoginView
+    
+   
   }
 ]
+  
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

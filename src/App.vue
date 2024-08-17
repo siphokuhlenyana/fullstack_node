@@ -1,7 +1,25 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/getFruits">Get Fruits</router-link>|
+    <!-- <router-link to="/about">Select Fruit</router-link>|
+    <router-link to="/insertFruit">Insert Fruit</router-link>|
+    <router-link to="/deleteFruit">Delete Fruit</router-link>|
+    <router-link to="/updateFruit">Update Fruit</router-link>|
+
+    <router-link to="/getData">Get Data</router-link>|
+    <router-link to="/selectUser">Select User</router-link>|
+    <router-link to="/insertUser">Insert User</router-link>|
+    <router-link to="/deleteUser">Delete User</router-link>|
+    <router-link to="/updateUser">Update User</router-link>| -->
+    <router-link to="/register">Register</router-link>|
+    <div v-if="!$cookies.get('token')">
+          <router-link to="/login">Login</router-link>
+    </div>
+    <div v-else>
+      <button @click="logout()">Log Out</button>
+    </div>
+
   </nav>
   <router-view/>
 </template>
@@ -28,3 +46,13 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
+<script>
+export default{
+  methods: {
+    logout(){
+      !this.$cookies.remove('token')
+      location.reload()
+    }
+  },
+}
+</script>
